@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!--cookies used here-->
+<body onload="checkcookies()">
+    <p id="cookie"></p>
+    <script>
+        function checkcookies () {
+            var text = "";
+            if (navigator.cookieEnabled== true){
+                text= "cookies enabled";
+            } else {
+                text = "cookies desabled";
+            }document.getElementById("cookie").innerHTML = text;
+        }
+    </script>
+
+    
+    <div style="padding: 20px; text-align: center;">
+
+        <!---this is where i used the first example to change the color--->
+        <h1 id="h1" style="color: green;">Welcome to the Coding Tutorial</h1>
+        <button type="button" onclick="document.getElementById('h1').style.color='black'">to change color</button>
+        <p>Learn the basics of coding step by step</p>
+    </div>
+
+    
+    <div style="text-align: center;">
+        <!---this is where i used the first event-->
+        <h2 onclick="this.innerHTML='lets learn code'">tap on me</h2>
+        <img src="intro.png" alt="visit later" style="width: 200px; height: auto;">
+        <p id="p1" style="font-size: 15px;">
+            Coding is the process of creating instructions for computers using programming languages. In this tutorial, you will learn 
+            The goal is to build a simple, well-structured webpage using essential HTML tags. Make sure to
+            <strong><span style="color: red;">pay attention to details</span></strong> and follow along carefully.
+        </p>
+        <!---this is where i used the second example to make visible or hidden--->
+        <input type="button" value="hide text" 
+        onclick="document.getElementById('p1').style.visibility='hidden'">
+        <input type="button" value="show text" 
+        onclick="document.getElementById('p1').style.visibility='visible'">
+    </div>
+
+    
+    <div style="text-align: center;">
+        <h3>Watch a Tutorial with the time being:</h3>
+        <!--time is-->
+        <button onclick="displaydate()">see the time?</button>
+        <script>
+            function displaydate(){
+                document.getElementById("timeis").innerHTML = Date();
+            }
+        </script>
+        <p id="timeis"></p>
+        <hr>
+        <iframe width="640" height="360" src="https://www.youtube.com/embed/B-s71n0dHUk" 
+                title="YouTube video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+        </iframe>
+        <p>Watch this video to learn how to write your first program.</p>
+    </div>
+
+    <!--assign event-->
+    <p> click "try it" to see the display date function.</p>
+    <button id="b1">try it</button>
+    <p id="para"></p>
+    <script>
+        document.getElementById("b1").onclick = showtime;
+        function showtime(){
+            document.getElementById("para").innerHTML = Date();
+        }
+    </script>
+    <hr>
+
+    
+    <div style="width: 80%; margin: 20px auto;">
+        <h3 style="text-align: center;">HTML Element Basics</h3>
+        <table style="width: 100%; border-collapse: collapse;">
+            <tr style="background-color: rgb(221, 221, 221);">
+                <th style="padding: 10px;">Element</th>
+                <th style="padding: 10px;">Description</th>
+                <th style="padding: 10px;">Example</th>
+            </tr>
+            <tr style="border-top: 1px solid rgb(204, 204, 204);">
+                <td style="padding: 10px;"><span style="color: purple;">h1</span></td>
+                <td style="padding: 10px;">Main Heading</td>
+                <td style="padding: 10px;">h1 Title h1</td>
+            </tr>
+            <tr style="border-top: 1px solid rgb(204, 204, 204);">
+                <td style="padding: 10px;"><span style="color: purple;">p</span></td>
+                <td style="padding: 10px;">Paragraph</td>
+                <td style="padding: 10px;">p Text p</td>
+            </tr>
+            <tr style="border-top: 1px solid rgb(204, 204, 204);">
+                <td style="padding: 10px;"><span style="color: purple;">img</span></td>
+                <td style="padding: 10px;">Image</td>
+                <td style="padding: 10px;">img src="img.jpg"</td>
+            </tr>
+            <tr style="border-top: 1px solid rgb(204, 204, 204);">
+                <td style="padding: 10px;"><span style="color: purple;">div</span></td>
+                <td style="padding: 10px;">Division Block</td>
+                <td style="padding: 10px;">Content</td>
+            </tr>
+            <tr style="border-top: 1px solid rgb(204, 204, 204);">
+                <td style="padding: 10px;"><span style="color: purple;">span</span></td>
+                <td style="padding: 10px;">Inline Element</td>
+                <td style="padding: 10px;">Text</td>
+            </tr>
+        </table>
+    </div>
+    <h2> here will be an eventlistener() </h2>
+    <button id="mybtn">try it</button>
+    <script>
+        document.getElementById("mybtn").addEventListener("click",function(){alert ("hello world!");});
+    </script>
+
+    
+    <div style="width: 80%; margin: 20px auto;">
+        <h3 style="text-align: center;">Key Steps to Start Coding</h3>
+        <ul style="font-size: 16px; line-height: 1.8;">
+            <li>Install a code editor</li>
+            <li>Start with basic HTML structure</li>
+            <li>Practice using common elements like <span style="color: green;">div</span> and <span style="color: green;">span</span></li>
+            <li>Add inline CSS to style elements</li>
+        </ul>
+    </div>
+
+    <!--onchange used -->
+    <script>
+        function myfunction(){
+            var x = document.getElementById("upper");
+            x.value= x.value.toUpperCase();
+        }
+    </script>
+    enter your name: <input type="text" id="upper" onchange="myfunction()">
+    <p>turn into cap</p>
+    <br><br><br>
+
+    <hr>
+    <!--bubbling /capturing-->
+    <div id="parent">
+        <div id="child">
+            <button>click me</button>
+        </div>
+    </div>
+    <script>
+        function parentclick(){
+            console.log("parent clicked");
+        }
+        function childclick(){
+            consolelog("child clicked");}
+            function buttonclicked() {
+                console.log("button clicked");}
+                var parent = document.getElementById("parent");
+                var child = document.getElementById("child");
+                var button = document.getElementById("button");
+                parent.addEventListener("click", parentclick, true);
+                child.addEventListener("click", childclick, true);
+                parent.addEventListener("click", buttonclicked, false); <!--this is by default false-->
+    </script>
+    <br><br><br>
+    <footer>Copyright 2024 Coding Tutorial | All rights reserved</footer>
+
+</body>
+</html>
